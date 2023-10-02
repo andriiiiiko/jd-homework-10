@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </Console>
+
+        <File name="HttpImageStatusCli" fileName="logs/httpImageStatusCli.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </File>
+
+        <File name="HttpStatusChecker" fileName="logs/httpStatusChecker.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </File>
+
+        <File name="HttpStatusImageDownloader" fileName="logs/httpStatusImageDownloader.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.andriiiiiko.http.HttpImageStatusCli" level="info">
+            <AppenderRef ref="HttpImageStatusCli"/>
+        </Logger>
+
+        <Logger name="com.andriiiiiko.http.HttpStatusChecker" level="info">
+            <AppenderRef ref="HttpStatusChecker"/>
+        </Logger>
+
+        <Logger name="com.andriiiiiko.http.HttpStatusImageDownloader" level="info">
+            <AppenderRef ref="HttpStatusImageDownloader"/>
+        </Logger>
+
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
